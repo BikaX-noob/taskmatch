@@ -1,0 +1,25 @@
+{
+  "entities": {
+    "Job": {
+      "title": "Job",
+      "description": "A job post offering a task and payment.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "payment": { "type": "string" },
+        "location": { "type": "string" },
+        "contactInfo": { "type": "string" },
+        "createdAt": { "type": "number", "description": "Timestamp" },
+        "userId": { "type": "string" }
+      },
+      "required": ["title", "description", "payment", "location", "contactInfo", "createdAt", "userId"]
+    }
+  },
+  "firestore": {
+    "/jobs/{jobId}": {
+      "schema": "Job",
+      "description": "Jobs posted by users."
+    }
+  }
+}
